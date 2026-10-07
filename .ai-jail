@@ -1,0 +1,32 @@
+# .ai-jail
+
+# AI agents need network access to reach their providers.
+network = true
+
+# Allow the invoked AI agent to reuse its authentication/session state.
+agent_state = true
+
+private_home = true
+inherit_env = false
+
+no_docker = true
+no_gpu = true
+no_display = true
+
+ssh = false
+x11 = false
+host_shm = false
+systemd_user = false
+
+mask = [
+    ".env",
+    ".env.*",
+    "*.pem",
+    "*.key",
+]
+
+deny_paths = [
+    "secrets/",
+    ".secrets/",
+    "credentials/",
+]
